@@ -45,7 +45,14 @@ z = z + 1;
 return chanz;
 }
 packs = [];
-packs[cn] = parseCodes("tinyurl.com/lsusnews");
+function addPack(r) {
+packs[cn] = parseCodes(r);
+cn = cn + 1;
+}
+addPack("tinyurl.com/lsusnews");
+addPack("tinyurl.com/lsusnews");
+addPack("tinyurl.com/lsusnews");
+//packs[window.cn] = parseCodes("tinyurl.com/lsusnews");
 function compileChannels() {
 channels = [];
 b = 0;
