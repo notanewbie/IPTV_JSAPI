@@ -3,7 +3,11 @@ imgbox {
 position: absolute;
 top: 3%;
 left: 3%;
-width: 40%;
+width: 43%;
+height: 100%;
+overflow-y: auto;
+overflow-x: hidden;
+height: 94%;
 }
 #img1 {
 position: relative;
@@ -18,16 +22,35 @@ height: calc((78.7vw / 2) * (9/16));
 table {
 width: 98.5%;
 height: 10%;
-font-size: 1.8vw;
+font-size: 2vw;
 font-family: Arial;
 }
 td {
 width: 50%;
 }
+ctext {
+position: relative;
+top: 0.6vh;
+display: block;
+width: 65%;
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+margin: 0px;
+}
+#table2 {
+position: relative;
+width: calc(78.7vw / 2);
+height: 0vh;
+font-size: 2vw;
+font-family: Arial;
+margin-bottom: -1.3vh;
+}
 #clogo {
-height: 6%;
+height: 2vw;
 position: relative;
 float: right;
+top: -2vw;
 }
 iarea {
 position: absolute;
@@ -58,12 +81,18 @@ font-family: Arial;
 line-height: 200%;
 font-size: 4vh;
 text-indent: 8vw;
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
 }
 cbox {
 position: absolute;
 top: 3%;
-left: 45%;
+left: 48%;
 right: 13%;
+overflow-y: auto;
+overflow-x: hidden;
+height: 94%;
 }
 a {
 text-decoration: none;
@@ -81,21 +110,26 @@ font-size: 2vw;
 }
 </style>
 <imgbox>
-<img id="img1" src="https://cdn1.thr.com/sites/default/files/imagecache/scale_crop_768_433/2013/01/cartoon_network_regular_show_a_l.jpg">
-<img id="img1" src="https://i2.wp.com/watercoolerconvos.com/wp-content/uploads/2016/09/atlanta_FX_peaches.jpg">
-<table><tr><td>Channel<img id="clogo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Hulu_Logo.svg/1200px-Hulu_Logo.svg.png"></td><td>Hulu<img id="clogo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Hulu_Logo.svg/1200px-Hulu_Logo.svg.png"></td></tr></table>
-<img id="img1" src="https://upload.wikimedia.org/wikipedia/en/9/9d/Whiskey_Cavalier_Intertitle.jpg">
-<img id="img1" src="http://weddingdigestkenya.com/wp-content/uploads/2014/02/24-live-another-day2.jpg">
-<table><tr><td>Channel<img id="clogo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Hulu_Logo.svg/1200px-Hulu_Logo.svg.png"></td><td>Hulu<img id="clogo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Hulu_Logo.svg/1200px-Hulu_Logo.svg.png"></td></tr></table>
-<img id="img2" src=https://www.trillmag.com/wp-content/uploads/2017/11/22881.jpg>
-<table><tr><td>Hulu<img id="clogo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Hulu_Logo.svg/1200px-Hulu_Logo.svg.png"></td></tr></table>
+<a href=""><img id="img1" src="https://cdn1.thr.com/sites/default/files/imagecache/scale_crop_768_433/2013/01/cartoon_network_regular_show_a_l.jpg"></a>
+<a href=""><img id="img1" src="https://i2.wp.com/watercoolerconvos.com/wp-content/uploads/2016/09/atlanta_FX_peaches.jpg"></a>
+<table id="table2"><tr><td><ctext>Channel</ctext><a href=""><img id="clogo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Hulu_Logo.svg/1200px-Hulu_Logo.svg.png"></a></td><td><ctext>Hulu</ctext><a href=""><img id="clogo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Hulu_Logo.svg/1200px-Hulu_Logo.svg.png"></a></td></tr></table>
+<a href=""><img id="img1" src="https://upload.wikimedia.org/wikipedia/en/9/9d/Whiskey_Cavalier_Intertitle.jpg"></a>
+<a href=""><img id="img1" src="http://weddingdigestkenya.com/wp-content/uploads/2014/02/24-live-another-day2.jpg"></a>
+<table id="table2"><tr><td><ctext>Channel</ctext><a href=""><img id="clogo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Hulu_Logo.svg/1200px-Hulu_Logo.svg.png"></a></td><td><ctext>24: Live Another Day</ctext><a href=""><img id="clogo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Hulu_Logo.svg/1200px-Hulu_Logo.svg.png"></a></td></tr></table>
+<a href=""><img id="img2" src=https://www.trillmag.com/wp-content/uploads/2017/11/22881.jpg></a>
+<table id="table2"><tr><td><ctext>Rick and Morty</ctext><a href=""><img id="clogo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Hulu_Logo.svg/1200px-Hulu_Logo.svg.png"></a></td></tr></table>
 </imgbox>
 <cbox>
 <a href=""><cinfo><iarea><img id="clogo2" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Hulu_Logo.svg/1200px-Hulu_Logo.svg.png"></iarea>Hulu</cinfo></a href=""">
 <a href=""><cinfo><iarea><img id="clogo2" src="https://cdn.vox-cdn.com/thumbor/0kpe316UpZWk53iw3bOLoJfF6hI=/0x0:1680x1050/1400x1400/filters:focal(706x391:974x659):format(gif)/cdn.vox-cdn.com/uploads/chorus_image/image/56414325/YTLogo_old_new_animation.0.gif"></iarea>YouTube</cinfo></a href=""">
+<a href=""><cinfo><iarea><img id="clogo2" src="https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fyt3.ggpht.com%2F-X-HvDGDjoqE%2FAAAAAAAAAAI%2FAAAAAAAAAAA%2F8qH6g6bre38%2Fs900-c-k-no-mo-rj-c0xffffff%2Fphoto.jpg&f=1"></iarea>Amazon Prime Video</cinfo></a href=""">
+<a href=""><cinfo><iarea><img id="clogo2" src="https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn3.vox-cdn.com%2Fthumbor%2FjpUPVZY3IZ1nERDnYQbGC8QJ_iw%3D%2F39x0%3A3111x2048%2F1280x854%2Fcdn0.vox-cdn.com%2Fuploads%2Fchorus_image%2Fimage%2F49901753%2Fnetflixlogo.0.0.png&f=1"></iarea>Netflix</cinfo></a href=""">
+<a href=""><cinfo><iarea><img id="clogo2" src="https://cdn.vox-cdn.com/thumbor/0kpe316UpZWk53iw3bOLoJfF6hI=/0x0:1680x1050/1400x1400/filters:focal(706x391:974x659):format(gif)/cdn.vox-cdn.com/uploads/chorus_image/image/56414325/YTLogo_old_new_animation.0.gif"></iarea>YouTube</cinfo></a href=""">
+<a href=""><cinfo><iarea><img id="clogo2" src="https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fyt3.ggpht.com%2F-X-HvDGDjoqE%2FAAAAAAAAAAI%2FAAAAAAAAAAA%2F8qH6g6bre38%2Fs900-c-k-no-mo-rj-c0xffffff%2Fphoto.jpg&f=1"></iarea>Amazon Prime Video</cinfo></a href=""">
+<a href=""><cinfo><iarea><img id="clogo2" src="https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fyt3.ggpht.com%2F-X-HvDGDjoqE%2FAAAAAAAAAAI%2FAAAAAAAAAAA%2F8qH6g6bre38%2Fs900-c-k-no-mo-rj-c0xffffff%2Fphoto.jpg&f=1"></iarea>Amazon Prime Video</cinfo></a href=""">
 </cbox>
 <sidebar>
-<a href="" style="position: absolute; top:15%; margin-left:4; margin-right:4;">Search</a>
+<a href="" style="position: absolute; top:15%; margin-left:4; margin-right:4;">Home</a>
 <a href="" style="position: absolute; bottom:50%; margin-left:1; margin-right:1;">Browse</a>
 <a href="" style="position: absolute; bottom:15%; margin-left:10; margin-right:10;">Watch</a>
 </sidebar>
