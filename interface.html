@@ -1,4 +1,8 @@
 <style type="text/css">
+iframe {
+border: 0px solid black;
+overflow: hidden;
+}
 imgbox {
 position: absolute;
 top: 3%;
@@ -46,11 +50,11 @@ ctext {
 position: relative;
 top: 0.6vh;
 display: block;
-width: 65%;
+width: 100%;
 white-space: nowrap;
 overflow: hidden;
 text-overflow: ellipsis;
-margin: 0px;
+margin-bottom: 2.4vh;
 }
 ctext2 {
 position: relative;
@@ -214,14 +218,14 @@ font-size: 2vw;
 </style>
 <screen1 hidden>
 <imgbox>
-<a href=""><img id="img1" src="https://cdn1.thr.com/sites/default/files/imagecache/scale_crop_768_433/2013/01/cartoon_network_regular_show_a_l.jpg"></a>
-<a href=""><img id="img1" src="https://i2.wp.com/watercoolerconvos.com/wp-content/uploads/2016/09/atlanta_FX_peaches.jpg"></a>
-<table id="table2"><tr><td><ctext>Channel</ctext><a href=""><img id="clogo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Hulu_Logo.svg/1200px-Hulu_Logo.svg.png"></a></td><td><ctext>Hulu</ctext><a href=""><img id="clogo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Hulu_Logo.svg/1200px-Hulu_Logo.svg.png"></a></td></tr></table>
-<a href=""><img id="img1" src="https://upload.wikimedia.org/wikipedia/en/9/9d/Whiskey_Cavalier_Intertitle.jpg"></a>
-<a href=""><img id="img1" src="http://weddingdigestkenya.com/wp-content/uploads/2014/02/24-live-another-day2.jpg"></a>
-<table id="table2"><tr><td><ctext>Channel</ctext><a href=""><img id="clogo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Hulu_Logo.svg/1200px-Hulu_Logo.svg.png"></a></td><td><ctext>24: Live Another Day</ctext><a href=""><img id="clogo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Hulu_Logo.svg/1200px-Hulu_Logo.svg.png"></a></td></tr></table>
-<a href=""><img id="img2" src=https://www.trillmag.com/wp-content/uploads/2017/11/22881.jpg></a>
-<table id="table2"><tr><td><ctext>Rick and Morty</ctext><a href=""><img id="clogo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Hulu_Logo.svg/1200px-Hulu_Logo.svg.png"></a></td></tr></table>
+<iframe id="img1" src="http://notanewbie.com/hls-live-player/v3.html" autoplay></iframe>
+<iframe id="img1" src="https://i2.wp.com/watercoolerconvos.com/wp-content/uploads/2016/09/atlanta_FX_peaches.jpg"></iframe>
+<table id="table2"><tr><td><ctext>Channel</ctext></td><td><ctext>Hulu</ctext></td></tr></table>
+<iframe id="img1" src="https://upload.wikimedia.org/wikipedia/en/9/9d/Whiskey_Cavalier_Intertitle.jpg"></iframe>
+<iframe id="img1" src="http://weddingdigestkenya.com/wp-content/uploads/2014/02/24-live-another-day2.jpg"></iframe>
+<table id="table2"><tr><td><ctext>Channel</ctext></td><td><ctext>24: Live Another Day</ctext></td></tr></table>
+<iframe id="img2" src=https://www.trillmag.com/wp-content/uploads/2017/11/22881.jpg></iframe>
+<table id="table2"><tr><td><ctext>Rick and Morty</ctext></td></tr></table>
 </imgbox>
 <cbox>
 <a href=""><cinfo><iarea><img id="clogo2" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Hulu_Logo.svg/1200px-Hulu_Logo.svg.png"></iarea>Hulu</cinfo></a href=""">
@@ -249,7 +253,7 @@ font-size: 2vw;
 
 <screen3>
 <imgbox2>
-<a href=""><img id="img3" src=https://www.trillmag.com/wp-content/uploads/2017/11/22881.jpg></a>
+<a href=""><iframe id="img3" src="https://www.trillmag.com/wp-content/uploads/2017/11/22881.jpg"></iframe></a>
 <table id="table3"><tr><td><ctext2>Rick and Morty</ctext2><a href=""><img id="clogo3" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Hulu_Logo.svg/1200px-Hulu_Logo.svg.png"></a></td></tr></table>
 </imgbox2>
 <cbox3>
@@ -284,4 +288,70 @@ document.getElementsByTagName("screen2")[0].hidden = true
 document.getElementsByTagName("screen3")[0].hidden = false
 }
 show1();
+function clearAll() {
+document.getElementsByTagName("imgbox")[0].innerHTML = "";
+document.getElementsByTagName("cbox")[0].innerHTML = "";
+document.getElementsByTagName("cbox2")[0].innerHTML = "";
+document.getElementsByTagName("imgbox2")[0].innerHTML = "";
+document.getElementsByTagName("cbox3")[0].innerHTML = "";
+}
+function clearArea(area) {
+document.getElementsByTagName(area)[0].innerHTML = "";
+}
+//clearAll();
+function getElementsById(elementID){
+    var elementCollection = new Array();
+    var allElements = document.getElementsByTagName("*");
+    for(i = 0; i < allElements.length; i++){
+        if(allElements[i].id == elementID)
+            elementCollection.push(allElements[i]);
+
+    }
+    return elementCollection;
+}
+//function setPrime(w, logo, channel, command) {
+function setPrime(w, logo, channel, command) {
+if(w != 4) {
+getElementsById("img1")[w].src = logo;
+}
+else {
+getElementsById("img2")[0].src = logo;
+}
+document.getElementsByTagName("ctext")[w].innerHTML = '<a href="javascript:' + command + '">' + channel + '</a>';
+}
+function setPrime2(embed, logo, channel, command) {
+getElementsById("img3")[0].src = embed;
+getElementsById("clogo3")[0].src = logo;
+document.getElementsByTagName("ctext2")[0].innerHTML = '<a href="javascript:' + command + '">' + channel + '</a>';
+}
+
+function addInCbox(logo, channel, command) {
+document.getElementsByTagName("cbox")[0].innerHTML = document.getElementsByTagName("cbox")[0].innerHTML + '<a href="javascript:' + command + '"><cinfo><iarea><img id="clogo2" src="' + logo + '"></iarea>' + channel + '</cinfo></a>';
+}
+function addInCbox2(logo, channel, command, t) {
+if(t != "s") {
+document.getElementsByTagName("cbox2")[0].innerHTML = document.getElementsByTagName("cbox2")[0].innerHTML + '<a href="javascript:' + command + '"><cinfo2><iarea><img id="clogo2" src="' + logo + '"></iarea>' + channel + '</cinfo2></a>';
+}
+else {
+document.getElementsByTagName("cbox2")[0].innerHTML = document.getElementsByTagName("cbox2")[0].innerHTML + '<cinfo3><input type="text" value="' + channel + '" onkeydown="' + command + '"></cinfo>';
+}
+}
+function addInCbox3(logo, channel, command, t) {
+if(t != "s") {
+document.getElementsByTagName("cbox3")[0].innerHTML = document.getElementsByTagName("cbox3")[0].innerHTML + '<a href="javascript:' + command + '"><cinfo2><iarea><img id="clogo2" src="' + logo + '"></iarea>' + channel + '</cinfo2></a>';
+}
+else {
+document.getElementsByTagName("cbox3")[0].innerHTML = document.getElementsByTagName("cbox3")[0].innerHTML + '<cinfo3><input type="text" value="' + channel + '" onkeydown="' + command + '"></cinfo>';
+}
+}
+setPrime(4,"http://notanewbie.com/hls-live-player/full.html?url=https://www.cbsnews.com/common/video/dai_prod.m3u8&quality=0&volume=0","CBSN","");
+clearArea("cbox");
+addInCbox("https://www.broadcastingcable.com/.image/t_share/MTU3NDI0MTUwNjA3MDQ2MzEw/cbsn-logo.png", "CBSN", "");
+clearArea("cbox2");
+document.getElementsByTagName("cbox2")[0].innerHTML = '<cinfo3><input type="text" value="Hulu"></input></cinfo3>';
+addInCbox2("https://www.broadcastingcable.com/.image/t_share/MTU3NDI0MTUwNjA3MDQ2MzEw/cbsn-logo.png", "CBSN", "");
+clearArea("cbox3");
+addInCbox3("https://www.broadcastingcable.com/.image/t_share/MTU3NDI0MTUwNjA3MDQ2MzEw/cbsn-logo.png", "CBSN", "");
+setPrime2("http://notanewbie.com/hls-live-player/full.html?url=https://www.cbsnews.com/common/video/dai_prod.m3u8&quality=0&volume=0","https://www.broadcastingcable.com/.image/t_share/MTU3NDI0MTUwNjA3MDQ2MzEw/cbsn-logo.png","CBSN","");
+
 </script>
